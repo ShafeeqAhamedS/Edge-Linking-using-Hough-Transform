@@ -84,7 +84,10 @@ plt.axis('off')
 ```
 ## Output
 
-### Input image and grayscale image
+| Input Image 	|  Gray Scale	|
+|:-:	|:-:	|
+|       |       |
+
 ### Result of Gaussian Filter
 ### Result of Canny Edge detector
 ### Result of Hough transform
