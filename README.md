@@ -28,28 +28,38 @@ Developed by: **Shafeeq Ahamed. S**
 </br>
 Register Number: **212221230092**
 
-### Read image and convert it to grayscale image
+### Import Libraries
 ```py
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
-from cv2 import cvtColor
-image=cv2.imread("img.jpg")
-cv2.imshow("ORIGINAL",image)
-#gray=cv2.cvtColor(image,cv2.COLOR_RGB2GRAY)
+```
+### Read Image
+```py
+image=cv2.imread("road.png",1)
 
-plt.figure(1)
-plt.subplot(1,2,1)
 plt.imshow(image)
 plt.title('Original')
 plt.axis('off')
+```
+### Convert image to grayscale
+```py
+gray=cv2.cvtColor(image,cv2.COLOR_BGR2GRAY)
 
-plt.subplot(1,2,2)
-plt.imshow(image)
+plt.imshow(image,cmap="gray")
 plt.title('gray')
 plt.axis('off')
 ```
-### Find the edges in the image using canny detector and display
+
+### Smoothen image using Gaussian Filter
+```py
+img = cv2.GaussianBlur(src = gray, ksize = (15,15), sigmaX=0,sigmaY=0)
+
+plt.imshow(img)
+plt.title('EDGES')
+plt.axis('off')
+```
+### Find the edges in the image using canny detector
 ```py
 edges = cv2.Canny(image, 120, 150)
 plt.imshow(edges)
@@ -75,8 +85,9 @@ plt.axis('off')
 ## Output
 
 ### Input image and grayscale image
-### Canny Edge detector output
-### Display the result of Hough transform
+### Result of Gaussian Filter
+### Result of Canny Edge detector
+### Result of Hough transform
 
 
 ## Result:
