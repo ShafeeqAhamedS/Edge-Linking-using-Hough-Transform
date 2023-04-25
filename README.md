@@ -70,13 +70,13 @@ plt.axis('off')
 ```py
 lines=cv2.HoughLinesP(edges,1,np.pi/180,threshold=80,minLineLength=50,maxLineGap=250)
 ```
-# Draw lines on the image
+### Draw lines on the image
 ```py
 for line in lines:
     x1,y1,x2,y2=line[0]
     cv2.line(image,(x1,y1),(x2,y2),(0,0,205),2)
 ```
-# Display the result
+### Display the result
 ```py
 plt.imshow(image)
 plt.title('HOUGH')
@@ -84,14 +84,13 @@ plt.axis('off')
 ```
 ## Output
 
-| Input Image 	|  Gray Scale	|
-|:-:	|:-:	|
-|       |       |
+| Gray Scale 	|  Gaussian Filter	|
+|:-:	        |:-:              	|
+|![image](https://user-images.githubusercontent.com/93427237/234353787-ef7ab521-460f-4bd7-a336-688bab73e560.png)|![image](https://user-images.githubusercontent.com/93427237/234353958-046b5f5f-be6e-4427-b991-a2a2b4a97712.png)|
 
-### Result of Gaussian Filter
-### Result of Canny Edge detector
-### Result of Hough transform
-
+| Canny Edge 	|  Hough transform	|
+|:-:	        |:-:              	|
+|![image](https://user-images.githubusercontent.com/93427237/234354139-fab37042-9297-41a3-9b5b-b67f54061e37.png)|![image](https://user-images.githubusercontent.com/93427237/234354231-0ea6c31e-f948-40fa-92fd-cccb42a07742.png)|
 
 ## Result:
 Thus the program is written with python and OpenCV to detect lines using Hough transform. 
